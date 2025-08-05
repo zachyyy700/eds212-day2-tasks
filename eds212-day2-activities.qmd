@@ -48,7 +48,7 @@ head(penguins)
 # create plot
 ggplot(data = penguins, aes(x =  bill_length_mm, y = bill_depth_mm)) + 
   geom_point(aes(color = species)) + 
-  scale_color_manual(values = c("green2", "magenta","darkblue")) +
+  scale_color_manual(values = c("yellow2", "orange","darkblue")) +
   labs(x = "Bill Length (mm)",
        y = "Bill Depth (mm)",
        title = "Penguin's Bills by Species") +
