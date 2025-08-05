@@ -1,0 +1,8 @@
+---
+title: "eds212_day2_activities"
+author: "zachyloo"
+format: html
+editor: visual
+---
+
+### Attached tidyverse & palmerpenguins
