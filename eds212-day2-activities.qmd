@@ -5,7 +5,7 @@ format: html
 editor: visual
 ---
 
-### Attached tidyverse & palmerpenguins
+## Section 3. Derivatives in R
 
 Find the derivative expression & slope at indicated value for each function below:
 
@@ -20,7 +20,9 @@ x <- 3
 eval(deriv_1)
 ```
 
-Meaning: For this function, at x = 3, the slope is 6
+For this function, at x = 3, the slope is 6
+
+$P(a) = 2(3a + 2)^4 - 5$
 
 ```{r}
 exp_2 <- expression(2* (3 * a + 2 )^4 - 5)
@@ -29,4 +31,37 @@ deriv_2 <- D(expr = exp_2, name = "a")
 # evaluate at a = 1.2
 a <- 1.2
 eval(deriv_2)
+```
+
+For this function, at a = 1.2, the slope is 4214.784
+
+## Section 4. More Penguins Please
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+#need to know column names
+head(penguins)
+```
+
+```{r}
+# create plot
+ggplot(data = penguins, aes(x =  bill_length_mm, y = bill_depth_mm)) + 
+  geom_point(aes(color = species)) + 
+  scale_color_manual(values = c("green2", "magenta","darkblue")) +
+  labs(x = "Bill Length (mm)",
+       y = "Bill Depth (mm)",
+       title = "Penguin's Bills by Species") +
+  facet_wrap(~species) +
+  theme_minimal()
+```
+
+```{r}
+# new jitter plot
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) + 
+  geom_jitter(aes(color = species)) +
+  labs(x = "Species",
+       y = "Flipper Length (mm)",
+       title = "Penguin Species Comparison of Flipper Length") + 
+  theme_minimal()
 ```
