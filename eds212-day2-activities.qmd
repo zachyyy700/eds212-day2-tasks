@@ -6,3 +6,27 @@ editor: visual
 ---
 
 ### Attached tidyverse & palmerpenguins
+
+Find the derivative expression & slope at indicated value for each function below:
+
+$f(x) = x^2$ at x=3
+
+```{r}
+exp_1 <- expression(x^2)
+deriv_1 <- D(expr = exp_1, name = "x")
+
+# evaluate at x = 3
+x <- 3
+eval(deriv_1)
+```
+
+Meaning: For this function, at x = 3, the slope is 6
+
+```{r}
+exp_2 <- expression(2* (3 * a + 2 )^4 - 5)
+deriv_2 <- D(expr = exp_2, name = "a")
+
+# evaluate at a = 1.2
+a <- 1.2
+eval(deriv_2)
+```
